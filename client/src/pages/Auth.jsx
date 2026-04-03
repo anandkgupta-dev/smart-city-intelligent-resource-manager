@@ -46,10 +46,10 @@ const Auth = () => {
                          <Leaf className="text-emerald-500" size={32} />
                     </div>
                     <h1 className="text-2xl font-bold font-sans text-slate-900 mb-2 tracking-tight">
-                        {isLogin ? 'Eco Platform Gateway' : 'Access Request'}
+                        {isLogin ? 'Sign In' : 'Sign Up'}
                     </h1>
                     <p className="text-slate-500 text-sm">
-                        {isLogin ? 'Sign in with your organizational credentials.' : 'Initialize sub-administrator token.'}
+                        {isLogin ? 'Sign in to access your dashboard' : 'Create a new account'}
                     </p>
                 </div>
 
@@ -57,18 +57,18 @@ const Auth = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Corporate Identity</label>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Email Address</label>
                         <input 
                             type="email" 
                             className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors shadow-sm placeholder-slate-400"
-                            placeholder="director@smartcity.net"
+                            placeholder="you@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Security Token</label>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Password</label>
                         <input 
                             type="password" 
                             className="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors shadow-sm placeholder-slate-400"
@@ -83,7 +83,7 @@ const Auth = () => {
                         type="submit" 
                         className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold uppercase tracking-wider py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 mt-4 border border-transparent"
                     >
-                        {isLogin ? 'Initialize Session' : 'Generate Token'}
+                        {isLogin ? 'Login' : 'Register'}
                     </button>
                 </form>
 
@@ -92,7 +92,7 @@ const Auth = () => {
                         onClick={() => setIsLogin(!isLogin)}
                         className="text-emerald-600 hover:text-emerald-500 text-xs font-semibold uppercase tracking-wider transition-colors hover:underline"
                     >
-                        {isLogin ? "Bypass to Registration Form" : "Return to Valid Authentication"}
+                        {isLogin ? "Don't have an account? Register" : "Already have an account? Login"}
                     </button>
                 </div>
             </div>
