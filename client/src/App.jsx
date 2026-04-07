@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import ResourcePage from './pages/ResourcePage';
 import { Layout } from './components/Layout';
 import { AuthContext } from './context/AuthContext';
+import Landing from './pages/Landing';
 
 const ProtectedRoute = ({ children }) => {
     const { token } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
     return (
         <Routes>
+            <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Auth />} />
             
             <Route path="/dashboard" element={
